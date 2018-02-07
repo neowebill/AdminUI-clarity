@@ -1,0 +1,16 @@
+<div class="content-container">
+  <div class="content-area">
+    <router-outlet></router-outlet>
+  </div>
+  <nav class="sidenav">
+    <section class="nav-group">
+      <input id="account-side" type="checkbox">
+      <label for="account-side">Account Management</label>
+      <ul class="nav-list">
+        <li class="nav-item"><a class="nav-link" routerLink="entities" routerLinkActive="active">Entities</a></li>
+        <li><a class="nav-link" routerLink="sites" routerLinkActive="active">Sites</a></li>
+        <li><a class="nav-link" routerLink="accounts" routerLinkActive="active">Accounts</a></li>
+      </ul>
+    </section>
+  </nav>
+</div>

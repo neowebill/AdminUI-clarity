@@ -1,0 +1,60 @@
+<div class="card col-md-7">
+  <div class="card-header">
+  </div>
+  <div class="card-block">
+    <form class="form" [formGroup]="frm">
+      <div class="form-group">
+        <label for="simNo">Sim #:</label>
+          <input
+            type="text"
+            id="simNo"
+            placeholder="Sim number..."
+            formControlName="sim_number" size="42"
+            class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="msidn">MSISDN:</label>
+          <input
+            type="text"
+            id="msidn"
+            placeholder="MSISDN..."
+            formControlName="msisdn" size="42"
+            class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="celNo">Cell #:</label>
+          <input
+            type="text"
+            id="celNo"
+            placeholder="Cell number..."
+            formControlName="cell_number"
+            size="42"
+            class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="ip">IP:</label>
+          <input
+            type="text"
+            id="ip"
+            placeholder="IP..."
+            formControlName="ip"
+            size="42"
+            class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <div class="select">
+          <select id="status">
+            <option *ngFor="let status of statuses"
+                    [ngValue]="status">{{ status }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-primary" (click)="saveSim()"
+              [disabled]="!frm.valid || !frm.dirty">Save Sim
+      </button>
+      <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+</div>

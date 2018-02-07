@@ -1,0 +1,29 @@
+<div class="divSize">
+  <clr-datagrid>
+    <clr-dg-column></clr-dg-column>
+    <clr-dg-column [clrDgField]="'sim_number'">Sim Num.</clr-dg-column>
+    <clr-dg-column [clrDgField]="'msisdn'">MSISDN</clr-dg-column>
+    <clr-dg-column [clrDgField]="'cell_number'">Cell Num.</clr-dg-column>
+    <clr-dg-column [clrDgField]="'ip'">IP</clr-dg-column>
+    <clr-dg-column [clrDgField]="'status'">Status</clr-dg-column>
+    <clr-dg-column></clr-dg-column>
+
+    <clr-dg-row *clrDgItems="let sim of sims">
+      <clr-dg-cell>
+        <a (click)="onEditSim.emit(sim)">
+          {{ sim.sim_number }}
+        </a>
+      </clr-dg-cell>
+      <clr-dg-cell>{{ sim.msisdn }}</clr-dg-cell>
+      <clr-dg-cell>{{ sim.cell_number }}</clr-dg-cell>
+      <clr-dg-cell>{{ sim.ip }}</clr-dg-cell>
+      <clr-dg-cell>{{ sim.status }}</clr-dg-cell>
+    </clr-dg-row>
+
+    <clr-dg-footer>
+      {{ pagination.firstItem + 1 }} - {{ pagination.lastItem - 1 }} of {{ pagination.totalItems }} sims
+      <clr-dg-pagination #pagination [clrDgPageSize]="10" ></clr-dg-pagination>
+    </clr-dg-footer>
+
+  </clr-datagrid>
+</div>
